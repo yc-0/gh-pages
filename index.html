@@ -22,6 +22,11 @@
         navigator.serviceWorker.register('./service-worker.js')
         .then(registration => {
           console.log('ServiceWorker registration successful.');
+        }).catch(err => {
+          console.log('ServiceWorker registration failed.', JSON.stringify(err));
+        });
+        
+        navigator.serviceWorker.ready.then(registration => {
           return registration.pushManager.getSubscription().then(
             subscription => {
               if (subscription) {
@@ -34,7 +39,7 @@
         }).then(subscription => {
           console.log('pushManager endpoint:', subscription.endpoint);
         }).catch(err => {
-          console.log('ServiceWorker registration failed.', JSON.stringify(err));
+          console.log('Subscription failed.', JSON.stringify(err));
         });
       }
     });
