@@ -35,7 +35,7 @@ self.addEventListener("push", function(event) {
       throw new Error('User not subscribed');
     })
     .then(function(res) {
-      return fetch('/notification.json');
+      return fetch('./notification.json');
     })
     .then(function(res) {
       if (res.status === 200) {
@@ -45,7 +45,7 @@ self.addEventListener("push", function(event) {
     })
     .then(function(res) {
       return self.registration.showNotification(res.title, {
-        icon: '/images/icon.png',
+        icon: './images/icon.png',
         body: res.body
       })
     })
