@@ -38,6 +38,7 @@
             });
         }).then(subscription => {
           console.log('pushManager endpoint:', subscription.endpoint);
+          document.getElementById('key').innerHTML = subscription.endpoint;
         }).catch(err => {
           console.log('Subscription failed.', JSON.stringify(err));
         });
@@ -48,5 +49,7 @@
 <body>
   PWAのテストですよ??<br/>
   ふむふむ。
+  
+  <div id="key"></div>
 </body>
 </html>
