@@ -34,7 +34,7 @@
         }).then(subscription => {
           console.log('pushManager endpoint:', subscription.endpoint);
         }).catch(err => {
-          console.log('ServiceWorker registration failed.', err);
+          console.log('ServiceWorker registration failed.', JSON.stringify(err));
         });
       }
     });
