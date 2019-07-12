@@ -41,7 +41,7 @@ self.addEventListener("push", function(event) {
       if (res.status === 200) {
         return res.json();
       }
-      throw new Error('notification api response error');
+      throw new Error('notification api response error', res);
     })
     .then(function(res) {
       return self.registration.showNotification(res.title, {
