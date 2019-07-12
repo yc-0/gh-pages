@@ -30,7 +30,7 @@ self.addEventListener("push", function(event) {
     self.registration.pushManager.getSubscription()
     .then(function(subscription) {
       if (subscription) {
-        return sbscription.endpoint;
+        return subscription.endpoint;
       } 
       throw new Error('User not subscribed');
     })
